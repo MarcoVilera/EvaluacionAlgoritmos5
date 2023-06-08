@@ -568,7 +568,7 @@ public class Eval4 extends javax.swing.JFrame {
                 return;
             }
             // Validar campo de Email
-            String emailRegex = "^[a-zA-Z0-9._%+-]{6,30}\\@[a-zA-Z0-9_-]{5,10}\\.[a-zA-Z0-9._-]{2,3}$";
+            String emailRegex = "^[a-zA-Z0-9.%+-]\\@[a-zA-Z0-9-]\\.[a-zA-Z0-9._-]$";
             if (!Pattern.matches(emailRegex, emailEntry.getText())) {
                 JOptionPane.showMessageDialog(null, "Por favor ingresa un correo electrónico válido.");
                 return;
@@ -1000,7 +1000,7 @@ public class Eval4 extends javax.swing.JFrame {
     }//GEN-LAST:event_lastNameEntryFocusLost
 
     private void emailEntryKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailEntryKeyTyped
-        String emailRegex = "^[a-zA-Z0-9.%+-]{6,30}\\@[a-zA-Z0-9-]{5,10}\\.[a-zA-Z0-9._-]{2,3}$";
+        String emailRegex = "^[a-zA-Z0-9.%+-]\\@[a-zA-Z0-9-]\\.[a-zA-Z0-9._-]$";
         String email = emailEntry.getText();
 
         // Verificar si el texto ingresado en el campo de correo electrónico coincide con el formato esperado

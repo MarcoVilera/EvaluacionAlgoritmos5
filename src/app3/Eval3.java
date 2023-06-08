@@ -8,9 +8,6 @@ import static java.awt.Color.WHITE;
 
 public class Eval3 extends javax.swing.JFrame {
 
-    //Ejes X y Y para arrastrar programa
-    int xMouse, yMouse;
-
     // Botón continuar presionado
     boolean pressed = false;
     //Botón agregar presionado
@@ -27,6 +24,25 @@ public class Eval3 extends javax.swing.JFrame {
     public Eval3() {
         initComponents();
         background.requestFocusInWindow();
+
+        /*//Elementos invisibles al inicio
+        elementAddedLabel.setText("Elemento Agregado");
+        elementAddedLabel.setVisible(false);
+
+        getElementLabel.setVisible(false);
+        getElementEntry.setVisible(false);
+        separatorgetElement.setVisible(false);
+        btnObtener.setVisible(false);
+
+        deleteElementLabel.setVisible(false);
+        deleteElementEntry.setVisible(false);
+        separatorDeleteElement.setVisible(false);
+        btnDeleteElement.setVisible(false);
+
+        labelSortMay.setVisible(false);
+        labelSortMen.setVisible(false);*/
+        clear();
+
     }
 
     /**
@@ -84,6 +100,7 @@ public class Eval3 extends javax.swing.JFrame {
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelEntrada.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelEntrada.setForeground(new java.awt.Color(0, 0, 0));
         labelEntrada.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelEntrada.setText("Entrada de datos");
         background.add(labelEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1000, -1));
@@ -218,8 +235,10 @@ public class Eval3 extends javax.swing.JFrame {
         background.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 116, 30));
 
         elementAddedLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        elementAddedLabel.setForeground(new java.awt.Color(0, 0, 0));
         elementAddedLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        background.add(elementAddedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 900, -1));
+        elementAddedLabel.setText("Elemento Agregado");
+        background.add(elementAddedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 1000, -1));
 
         listDisplay.setBorder(null);
         listDisplay.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -230,15 +249,16 @@ public class Eval3 extends javax.swing.JFrame {
         listDisplayText.setRows(5);
         listDisplay.setViewportView(listDisplayText);
 
-        background.add(listDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 250, 40));
+        background.add(listDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 250, 40));
 
         getElementLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getElementLabel.setForeground(new java.awt.Color(0, 0, 0));
+        getElementLabel.setText("Obtener elemento por su posición");
         background.add(getElementLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
 
         getElementEntry.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getElementEntry.setForeground(java.awt.Color.gray);
         getElementEntry.setBorder(null);
-        getElementEntry.setEnabled(false);
         getElementEntry.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 getElementEntryMousePressed(evt);
@@ -251,10 +271,10 @@ public class Eval3 extends javax.swing.JFrame {
         });
         background.add(getElementEntry, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 120, -1));
 
-        separatorgetElement.setForeground(new java.awt.Color(255, 255, 255));
+        separatorgetElement.setForeground(new java.awt.Color(0, 0, 0));
         background.add(separatorgetElement, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 120, 10));
 
-        btnObtener.setBackground(new java.awt.Color(255, 255, 255));
+        btnObtener.setBackground(new java.awt.Color(0, 150, 136));
         btnObtener.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnTextObtener.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -290,6 +310,8 @@ public class Eval3 extends javax.swing.JFrame {
         background.add(dsplayGetElement, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, -1, -1));
 
         deleteElementLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        deleteElementLabel.setForeground(new java.awt.Color(0, 0, 0));
+        deleteElementLabel.setText("Eliminar un elemento");
         background.add(deleteElementLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, -1));
 
         deleteElementEntry.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -308,10 +330,10 @@ public class Eval3 extends javax.swing.JFrame {
         });
         background.add(deleteElementEntry, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 120, -1));
 
-        separatorDeleteElement.setForeground(new java.awt.Color(255, 255, 255));
+        separatorDeleteElement.setForeground(new java.awt.Color(0, 0, 0));
         background.add(separatorDeleteElement, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 120, 10));
 
-        btnDeleteElement.setBackground(new java.awt.Color(255, 255, 255));
+        btnDeleteElement.setBackground(new java.awt.Color(0, 150, 136));
 
         btnTextDeleteElement.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnTextDeleteElement.setForeground(new java.awt.Color(255, 255, 255));
@@ -348,9 +370,13 @@ public class Eval3 extends javax.swing.JFrame {
         background.add(dsplayDeleteElement, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, -1, -1));
 
         labelSortMay.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelSortMay.setForeground(new java.awt.Color(0, 0, 0));
+        labelSortMay.setText("Elementos ordenados de mayor a menor");
         background.add(labelSortMay, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
 
         labelSortMen.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelSortMen.setForeground(new java.awt.Color(0, 0, 0));
+        labelSortMen.setText("Elementos ordenados de menor a mayor");
         background.add(labelSortMen, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, -1, -1));
 
         dsplaySortMay.setBorder(null);
@@ -431,12 +457,13 @@ public class Eval3 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTextAgregarMouseExited
 
     //Botón Agregar al ser clickeado
+    //TODO MODIFICAR IF NO MUESTRA elementAddedLabel
     private void btnTextAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTextAgregarMouseClicked
         background.requestFocusInWindow();
         String inputUsr = entryField.getText();
         boolean esValido = !("Ingresa un número".equals(inputUsr)) && !("".equals(inputUsr));
 
-        if (esValido) {
+        //if (esValido) {
             try {
                 int n;
                 n = Integer.parseInt(inputUsr);
@@ -445,7 +472,7 @@ public class Eval3 extends javax.swing.JFrame {
                 lista3.addFirst(n);
                 entryField.setText("Ingresa un número");
                 entryField.setForeground(GRAY);
-                elementAddedLabel.setText("Elemento Agregado");
+                elementAddedLabel.setVisible(true);
                 aggPressed = true;
                 btnContinuar.setBackground(new java.awt.Color(0, 150, 136));
                 btnTextContinuar.setForeground(WHITE);
@@ -453,7 +480,7 @@ public class Eval3 extends javax.swing.JFrame {
             } catch (NumberFormatException valueNotValid) {
                 elementAddedLabel.setText("Valor no valido");
             }
-        }
+        //}
     }//GEN-LAST:event_btnTextAgregarMouseClicked
 
     //Botón Continuar cuando el mouse entre
@@ -485,9 +512,19 @@ public class Eval3 extends javax.swing.JFrame {
             mostrados = true;
             btnLimpiar.setBackground(new java.awt.Color(0, 150, 136));
             btnTextLimpiar.setForeground(WHITE);
+
             elementAddedLabel.setText("Lista Generada");
-            getElementEntry.setEnabled(true);
-            deleteElementEntry.setEnabled(true);
+
+            getElementLabel.setVisible(true);
+            getElementEntry.setVisible(true);
+            separatorgetElement.setVisible(true);
+            btnObtener.setVisible(true);
+
+            deleteElementLabel.setVisible(true);
+            deleteElementEntry.setVisible(true);
+            separatorDeleteElement.setVisible(true);
+            btnDeleteElement.setVisible(true);
+
             Nodo actual = lista1.head;
 
             while (actual != null) {
@@ -543,7 +580,7 @@ public class Eval3 extends javax.swing.JFrame {
 
     //Botón Limpiar al ser clickeado
     private void btnTextLimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTextLimpiarMouseClicked
-       background.requestFocusInWindow();
+        background.requestFocusInWindow();
         pressed = false;
         aggPressed = false;
         mostrados = false;
@@ -551,9 +588,9 @@ public class Eval3 extends javax.swing.JFrame {
         mostradosFin = true;
 
         entryField.setEditable(true);
-        btnContinuar.setBackground(new java.awt.Color(204, 204, 204));
+        /*btnContinuar.setBackground(new java.awt.Color(204, 204, 204));
         btnTextContinuar.setForeground(GRAY);
-        btnTextLimpiar.setForeground(new java.awt.Color(128, 128, 128));
+        
         elementAddedLabel.setText("");
         listDisplayText.setText("");
 
@@ -578,7 +615,9 @@ public class Eval3 extends javax.swing.JFrame {
         btnDeleteElement.setBackground(WHITE);
 
         labelSortMay.setText("");
-        labelSortMen.setText("");
+        labelSortMen.setText("");*/
+        clear();
+        btnTextLimpiar.setForeground(new java.awt.Color(128, 128, 128));
         dsplaySortMayText.setText("");
         dsplaySortMenText.setText("");
 
@@ -636,7 +675,7 @@ public class Eval3 extends javax.swing.JFrame {
                 mostradoGet = false;
                 btnObtener.setBackground(new Color(204, 204, 204));
                 btnTextObtener.setForeground(GRAY);
-                getElementEntry.setEditable(false);
+                //getElementEntry.setEditable(false);
             } catch (NullPointerException indexNull) {
                 int size = lista1.getSize();
                 if (lista1.getSize() == 1) {
@@ -746,7 +785,7 @@ public class Eval3 extends javax.swing.JFrame {
                 btnDeleteElement.setBackground(new Color(204, 204, 204));
                 btnTextDeleteElement.setForeground(GRAY);
                 mostradosFin = false;
-                deleteElementEntry.setEditable(false);
+                //deleteElementEntry.setEditable(false);
 
                 if (lista1.getSize() == 0) {
                     elementAddedLabel.setText("Lista vacia");
@@ -782,11 +821,12 @@ public class Eval3 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTextDeleteElementMouseClicked
 
     //Entrada de numeros al ser presionada
+    //TODO CREAR EVENTO  FOCUS LOST CON btnagregar
     private void entryFieldMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entryFieldMousePressed
         if (entryField.getText().equals("Ingresa un número") && entryField.isEditable()) {
             entryField.setText("");
             entryField.setForeground(BLACK);
-            elementAddedLabel.setText("");
+           // elementAddedLabel.setText("");
         }
     }//GEN-LAST:event_entryFieldMousePressed
 
@@ -826,6 +866,32 @@ public class Eval3 extends javax.swing.JFrame {
     private void backgroundMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backgroundMouseClicked
         background.requestFocusInWindow();
     }//GEN-LAST:event_backgroundMouseClicked
+
+    public void clear() {
+        elementAddedLabel.setText("Elemento Agregado");
+        elementAddedLabel.setVisible(false);
+
+        getElementLabel.setVisible(false);
+        getElementEntry.setVisible(false);
+        separatorgetElement.setVisible(false);
+        btnTextObtener.setForeground(new java.awt.Color(255,255,255));
+        btnObtener.setVisible(false);
+
+        deleteElementLabel.setVisible(false);
+        deleteElementEntry.setVisible(false);
+        separatorDeleteElement.setVisible(false);
+        btnDeleteElement.setForeground(new java.awt.Color(255,255,255));
+        btnDeleteElement.setVisible(false);
+
+        labelSortMay.setVisible(false);
+        labelSortMen.setVisible(false);
+        
+        listDisplayText.setText("");
+        dsplayGetElement.setText("");
+        dsplayDeleteElement.setText("");
+        dsplaySortMayText.setText("");
+        dsplaySortMenText.setText("");
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
