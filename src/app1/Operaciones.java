@@ -48,14 +48,14 @@ public class Operaciones {
     }
 
     public static String multColumna(int matriz[][]) {//Multiplica la primera columna de la matriz
-        long mult = 1;
-        int temp = 0;
+        BigInteger mult = BigInteger.ONE;
+        BigInteger temp = BigInteger.ONE;
         String conc = "";
         String conctemp = "";
         String result = "";
         for (int i = 0; i < matriz[0].length; i++) {
-            temp = matriz[i][0];
-            mult = mult * temp;
+            temp = BigInteger.valueOf(matriz[i][0]);
+            mult = mult.multiply(temp);
         }
         for (int i = 0; i < matriz[0].length; i++) {
             conctemp = Integer.toString(matriz[i][0]);
@@ -69,23 +69,25 @@ public class Operaciones {
         return result;
     }
 
-    public static int multColumnaint(int matriz[][]) {//Multiplica la primera columna de la matriz en un valor entero
-        int mult = 1;
-        int temp = 0;
+    public static BigInteger multColumnaint(int matriz[][]) {//Multiplica la primera columna de la matriz en un valor entero
+        BigInteger mult = BigInteger.ONE;
+        BigInteger temp = BigInteger.ONE;
 
         for (int i = 0; i < matriz[0].length; i++) {
-            temp = matriz[i][0];
-            mult = mult * temp;
+            temp = BigInteger.valueOf(matriz[i][0]);
+            mult = mult.multiply(temp);
         }
         return mult;
     }
 
     public static String retornaInv(int[][] matriz) {
-    int resultado = 1;
+    BigInteger resultado = BigInteger.ONE;
     for (int i = 0; i < matriz.length; i++) {
-        resultado *= matriz[i][0];
+        resultado = resultado.multiply(BigInteger.valueOf(matriz[i][0]));
     }
-    String resultadoString = Integer.toString(resultado);
+        System.out.println(resultado);
+    
+    String resultadoString = resultado.toString();
     String resultadoInvertido = new StringBuilder(resultadoString).reverse().toString();
     return resultadoInvertido;
 }

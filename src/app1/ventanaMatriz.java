@@ -35,17 +35,13 @@ public class ventanaMatriz extends javax.swing.JFrame {
         calcBtn = new javax.swing.JButton();
         clrBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblMatriz = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
         displayTest1 = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
-        displayTest2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        displayTest3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        displayTest4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         mostrResult2 = new javax.swing.JLabel();
         mostrResult3 = new javax.swing.JLabel();
@@ -66,9 +62,11 @@ public class ventanaMatriz extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.setPreferredSize(new java.awt.Dimension(1000, 760));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Introduce valor n (1-9)");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 6, -1, -1));
         jPanel1.add(nField, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 28, 118, -1));
@@ -89,9 +87,9 @@ public class ventanaMatriz extends javax.swing.JFrame {
         });
         jPanel1.add(clrBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 28, -1, -1));
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("1:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 284, -1, -1));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2370, 317, -1, -1));
 
         tblMatriz.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -113,29 +111,30 @@ public class ventanaMatriz extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 267, 850, 50));
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("2: Multiplicación 1era columna");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 329, -1, -1));
-        jPanel1.add(displayTest2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2162, 329, 208, -1));
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("3: Resultado inverso de la multiplicación de 1era columna");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 351, -1, -1));
-        jPanel1.add(displayTest3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 351, -1, -1));
 
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("4: Promedio suma diagonal secundaria");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 373, -1, -1));
-        jPanel1.add(displayTest4, new org.netbeans.lib.awtextra.AbsoluteConstraints(2370, 373, -1, -1));
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("5: Potencia de menor elemento elevado al mayor elemento");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 412, -1, -1));
 
         mostrResult2.setText(" ");
-        jPanel1.add(mostrResult2, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 329, -1, -1));
+        jPanel1.add(mostrResult2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 329, -1, -1));
 
         mostrResult3.setText(" ");
-        jPanel1.add(mostrResult3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, -1, -1));
+        jPanel1.add(mostrResult3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, -1, -1));
 
         mostrResult4.setText(" ");
-        jPanel1.add(mostrResult4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 373, -1, -1));
+        jPanel1.add(mostrResult4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 373, -1, -1));
 
         mostrResult5.setEditable(false);
         mostrResult5.setColumns(2);
@@ -143,9 +142,9 @@ public class ventanaMatriz extends javax.swing.JFrame {
         displayTest1.setEditable(false);
         jScrollPane6.setViewportView(mostrResult5);
 
-        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 550, 50));
+        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 490, 50));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 510));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,7 +159,7 @@ public class ventanaMatriz extends javax.swing.JFrame {
         String concatenado = Operaciones.vectorMayorMenor(vector);
         displayTest1.setText(concatenado);
         mostrResult2.setText(Operaciones.multColumna(matriz));
-        numinv = Operaciones.multColumnaint(matriz);
+        //numinv = Operaciones.multColumnaint(matriz);
         mostrResult3.setText(Operaciones.retornaInv(matriz));
         mostrResult4.setText(Operaciones.diagonalSecProm(matriz));
         mostrResult5.setText(Operaciones.potenciaMenorMayor(matriz));
@@ -238,11 +237,7 @@ public class ventanaMatriz extends javax.swing.JFrame {
     private javax.swing.JButton calcBtn;
     private javax.swing.JButton clrBtn;
     public static javax.swing.JTextArea displayTest1;
-    private javax.swing.JLabel displayTest2;
-    private javax.swing.JLabel displayTest3;
-    private javax.swing.JLabel displayTest4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
