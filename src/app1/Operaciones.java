@@ -81,16 +81,14 @@ public class Operaciones {
     }
 
     public static String retornaInv(int[][] matriz) {
-    BigInteger resultado = BigInteger.ONE;
-    for (int i = 0; i < matriz.length; i++) {
-        resultado = resultado.multiply(BigInteger.valueOf(matriz[i][0]));
+        BigInteger resultado = BigInteger.ONE;
+        for (int i = 0; i < matriz.length; i++) {
+            resultado = resultado.multiply(BigInteger.valueOf(matriz[i][0]));
+        }
+        String resultadoString = resultado.toString();
+        String resultadoInvertido = new StringBuilder(resultadoString).reverse().toString();
+        return resultadoInvertido;
     }
-        System.out.println(resultado);
-    
-    String resultadoString = resultado.toString();
-    String resultadoInvertido = new StringBuilder(resultadoString).reverse().toString();
-    return resultadoInvertido;
-}
 
     public static String diagonalSecProm(int matriz[][]) {//Obtiene la diagonal secundaria de una matriz y el promedio de la misma
         int suma = 0;
@@ -128,7 +126,7 @@ public class Operaciones {
                     menor = matriz[i][j];
                 }
             }
-        }        
+        }
         BigInteger menorb = BigInteger.valueOf(menor);
         BigInteger pot = menorb.pow(mayor);
         result = Integer.toString(menor) + "^" + Integer.toString(mayor) + " = " + pot;

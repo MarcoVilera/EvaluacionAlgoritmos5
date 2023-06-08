@@ -9,8 +9,6 @@ public class ventanaMatriz extends javax.swing.JFrame {
      * Creates new form ventanaMatriz
      */
     public ventanaMatriz() {
-        setTitle("Evaluación 1 Algoritmos y Estructuras");
-
         initComponents();
     }
 
@@ -63,7 +61,7 @@ public class ventanaMatriz extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 760));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 650));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -106,6 +104,7 @@ public class ventanaMatriz extends javax.swing.JFrame {
         displayTest1.setEditable(false);
         displayTest1.setColumns(2);
         displayTest1.setRows(1);
+        displayTest1.setFocusable(false);
         displayTest1.setEditable(false);
         jScrollPane4.setViewportView(displayTest1);
 
@@ -139,19 +138,19 @@ public class ventanaMatriz extends javax.swing.JFrame {
         mostrResult5.setEditable(false);
         mostrResult5.setColumns(2);
         mostrResult5.setRows(1);
+        mostrResult5.setFocusable(false);
         displayTest1.setEditable(false);
         jScrollPane6.setViewportView(mostrResult5);
 
         jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 490, 50));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void calcBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcBtnActionPerformed
         // TODO add your handling code here:
-        int numinv;
         int n = Integer.parseInt(nField.getText());
         int matriz[][] = Operaciones.genRandMatriz(n);
         int vector[] = Operaciones.vectorMatriz(matriz, n);
@@ -159,7 +158,6 @@ public class ventanaMatriz extends javax.swing.JFrame {
         String concatenado = Operaciones.vectorMayorMenor(vector);
         displayTest1.setText(concatenado);
         mostrResult2.setText(Operaciones.multColumna(matriz));
-        //numinv = Operaciones.multColumnaint(matriz);
         mostrResult3.setText(Operaciones.retornaInv(matriz));
         mostrResult4.setText(Operaciones.diagonalSecProm(matriz));
         mostrResult5.setText(Operaciones.potenciaMenorMayor(matriz));
@@ -223,7 +221,7 @@ public class ventanaMatriz extends javax.swing.JFrame {
                 tblMatriz.setValueAt(matriz[i][j], i, j);
             }
         }
-        tblMatriz.setDefaultEditor(Object.class, null); //agregar esta línea para hacer que las celdas no sean editables
+        tblMatriz.setDefaultEditor(Object.class, null); //celdas no sean editables
     }
 
     public void closeMatriz() {//Cierra la matriz en la interfaz gráfica

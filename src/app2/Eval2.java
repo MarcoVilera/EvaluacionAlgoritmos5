@@ -70,17 +70,17 @@ public class Eval2 extends javax.swing.JFrame {
         entryLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         entryLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         entryLabel.setText("Entrada de Datos");
-        bg.add(entryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1000, -1));
+        bg.add(entryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1000, -1));
 
         mLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         mLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mLabel.setText("Valor M");
-        bg.add(mLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, 140, -1));
+        bg.add(mLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 140, -1));
 
         nLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         nLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nLabel.setText("Valor N ");
-        bg.add(nLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 140, -1));
+        bg.add(nLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 140, -1));
 
         nEntry.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         nEntry.setForeground(new java.awt.Color(153, 153, 153));
@@ -96,10 +96,10 @@ public class Eval2 extends javax.swing.JFrame {
                 nEntryActionPerformed(evt);
             }
         });
-        bg.add(nEntry, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 140, 30));
+        bg.add(nEntry, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 140, 30));
 
         separatorN.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(separatorN, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 140, 20));
+        bg.add(separatorN, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 140, 20));
 
         mEntry.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         mEntry.setForeground(new java.awt.Color(153, 153, 153));
@@ -115,10 +115,10 @@ public class Eval2 extends javax.swing.JFrame {
                 mEntryActionPerformed(evt);
             }
         });
-        bg.add(mEntry, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 140, 30));
+        bg.add(mEntry, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, 140, 30));
 
         separatorM.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(separatorM, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, 140, 20));
+        bg.add(separatorM, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 110, 140, 20));
 
         calcBtn.setBackground(new java.awt.Color(0, 150, 136));
         calcBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -152,7 +152,7 @@ public class Eval2 extends javax.swing.JFrame {
                 .addComponent(calcLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        bg.add(calcBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 110, 30));
+        bg.add(calcBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 110, 30));
 
         clrBtn.setBackground(new java.awt.Color(0, 150, 136));
         clrBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -177,11 +177,11 @@ public class Eval2 extends javax.swing.JFrame {
         clrBtn.setLayout(clrBtnLayout);
         clrBtnLayout.setHorizontalGroup(
             clrBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
+            .addGap(0, 110, Short.MAX_VALUE)
             .addGroup(clrBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(clrBtnLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(clrLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clrLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         clrBtnLayout.setVerticalGroup(
@@ -194,38 +194,38 @@ public class Eval2 extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        bg.add(clrBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 120, 30));
+        bg.add(clrBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 110, 30));
 
         opLabel.setBackground(new java.awt.Color(255, 255, 255));
         opLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         opLabel.setForeground(new java.awt.Color(255, 255, 255));
         opLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         opLabel.setText("Operaciones");
-        bg.add(opLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 860, -1));
+        bg.add(opLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 1000, -1));
 
         dotOp1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         dotOp1.setForeground(new java.awt.Color(255, 255, 255));
         dotOp1.setText("•");
-        bg.add(dotOp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
+        bg.add(dotOp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
 
         op1Display.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         op1Display.setForeground(new java.awt.Color(255, 255, 255));
         op1Display.setText("Comprobar si M es un número primo:");
-        bg.add(op1Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
+        bg.add(op1Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, -1, -1));
 
         shownOp1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         shownOp1.setForeground(new java.awt.Color(255, 255, 255));
-        bg.add(shownOp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
+        bg.add(shownOp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, -1, -1));
 
         dotOp2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         dotOp2.setForeground(new java.awt.Color(255, 255, 255));
         dotOp2.setText("•");
-        bg.add(dotOp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
+        bg.add(dotOp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, -1));
 
         op2Display.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         op2Display.setForeground(new java.awt.Color(255, 255, 255));
         op2Display.setText("Potencia N^M:");
-        bg.add(op2Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
+        bg.add(op2Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
 
         scrollOp2.setBorder(null);
 
@@ -237,17 +237,17 @@ public class Eval2 extends javax.swing.JFrame {
         shownOp2.setBorder(null);
         scrollOp2.setViewportView(shownOp2);
 
-        bg.add(scrollOp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 730, 40));
+        bg.add(scrollOp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 730, 40));
 
         dotOp3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         dotOp3.setForeground(new java.awt.Color(255, 255, 255));
         dotOp3.setText("•");
-        bg.add(dotOp3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+        bg.add(dotOp3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, -1, -1));
 
         op3Display.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         op3Display.setForeground(new java.awt.Color(255, 255, 255));
         op3Display.setText("Sucesión de Fibonacci hasta que sea <=|NxM|:");
-        bg.add(op3Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
+        bg.add(op3Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, -1));
 
         scrollOp3.setBorder(null);
 
@@ -259,17 +259,17 @@ public class Eval2 extends javax.swing.JFrame {
         shownOp3.setBorder(null);
         scrollOp3.setViewportView(shownOp3);
 
-        bg.add(scrollOp3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 550, 20));
+        bg.add(scrollOp3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 550, 20));
 
         dotOp4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         dotOp4.setForeground(new java.awt.Color(255, 255, 255));
         dotOp4.setText("•");
-        bg.add(dotOp4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, -1, -1));
+        bg.add(dotOp4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, -1, -1));
 
         op4Display.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         op4Display.setForeground(new java.awt.Color(255, 255, 255));
         op4Display.setText("Factorial de N:");
-        bg.add(op4Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
+        bg.add(op4Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, -1, -1));
 
         scrollOp4.setBorder(null);
 
@@ -281,23 +281,23 @@ public class Eval2 extends javax.swing.JFrame {
         shownOp4.setBorder(null);
         scrollOp4.setViewportView(shownOp4);
 
-        bg.add(scrollOp4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 740, 40));
+        bg.add(scrollOp4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, 740, 40));
 
         dotOp5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         dotOp5.setForeground(new java.awt.Color(255, 255, 255));
         dotOp5.setText("•");
-        bg.add(dotOp5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, -1, -1));
+        bg.add(dotOp5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 480, -1, -1));
 
         op5Display.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         op5Display.setForeground(new java.awt.Color(255, 255, 255));
         op5Display.setText("Suma de los digitos |NxM|:");
-        bg.add(op5Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, -1, -1));
+        bg.add(op5Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, -1, -1));
 
         shownOp5.setBackground(new java.awt.Color(255, 255, 255));
         shownOp5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         shownOp5.setForeground(new java.awt.Color(255, 255, 255));
         shownOp5.setText("xddd");
-        bg.add(shownOp5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, -1, -1));
+        bg.add(shownOp5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -307,7 +307,9 @@ public class Eval2 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();

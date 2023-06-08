@@ -103,19 +103,21 @@ public class Eval3 extends javax.swing.JFrame {
         labelEntrada.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         labelEntrada.setForeground(new java.awt.Color(0, 0, 0));
         labelEntrada.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelEntrada.setText("Entrada de datos");
-        background.add(labelEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1000, -1));
+        labelEntrada.setText("Entrada de Datos");
+        background.add(labelEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 380, -1));
 
         entryField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         entryField.setForeground(java.awt.Color.gray);
         entryField.setText("Ingresa un número");
         entryField.setBorder(null);
+        entryField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entryFieldFocusGained(evt);
+            }
+        });
         entryField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 entryFieldMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                entryFieldMousePressed(evt);
             }
         });
         entryField.addActionListener(new java.awt.event.ActionListener() {
@@ -123,10 +125,10 @@ public class Eval3 extends javax.swing.JFrame {
                 entryFieldActionPerformed(evt);
             }
         });
-        background.add(entryField, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 130, -1));
+        background.add(entryField, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 130, -1));
 
         separatorEntry.setForeground(java.awt.Color.black);
-        background.add(separatorEntry, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 130, 10));
+        background.add(separatorEntry, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 140, 10));
 
         btnAgregar.setBackground(new java.awt.Color(204, 204, 204));
         btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -136,6 +138,11 @@ public class Eval3 extends javax.swing.JFrame {
         btnTextAgregar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnTextAgregar.setText("Agregar");
         btnTextAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnTextAgregar.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                btnTextAgregarFocusLost(evt);
+            }
+        });
         btnTextAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnTextAgregarMouseClicked(evt);
@@ -411,7 +418,7 @@ public class Eval3 extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -510,12 +517,13 @@ public class Eval3 extends javax.swing.JFrame {
     //Botón Continuar al ser clickeado
     private void btnTextContinuarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTextContinuarMouseClicked
         background.requestFocusInWindow();
+
         if (aggPressed && !mostrados) {
             pressed = true;
             mostrados = true;
             btnLimpiar.setBackground(new java.awt.Color(0, 150, 136));
             btnTextLimpiar.setForeground(WHITE);
-
+            elementAddedLabel.setVisible(true);
             elementAddedLabel.setText("Lista Generada");
 
             getElementLabel.setVisible(true);
@@ -757,7 +765,7 @@ public class Eval3 extends javax.swing.JFrame {
                 }
                 dsplayDeleteElement.setText("Elemento " + deleteElementEntry.getText() + " Eliminado");
 
-                labelSortMay.setText("Elementos ordenados de mayor a menor");
+                labelSortMay.setVisible(true);
                 lista2.sortMayor();
                 if (lista2.getSize() == 1) {
                     dsplaySortMayText.setText(Integer.toString(lista2.get(0)));
@@ -770,8 +778,7 @@ public class Eval3 extends javax.swing.JFrame {
                         actual2 = actual2.getSiguiente();
                     }
                 }
-
-                labelSortMen.setText("Elementos ordenados de menor a mayor");
+                labelSortMen.setVisible(true);
                 lista3.sortMenor();
                 if (lista3.getSize() == 1) {
                     dsplaySortMenText.setText(Integer.toString(lista2.get(0)));
@@ -823,16 +830,6 @@ public class Eval3 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnTextDeleteElementMouseClicked
 
-    //Entrada de numeros al ser presionada
-    //TODO CREAR EVENTO  FOCUS LOST CON btnagregar
-    private void entryFieldMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entryFieldMousePressed
-        if (entryField.getText().equals("Ingresa un número") && entryField.isEditable()) {
-            entryField.setText("");
-            entryField.setForeground(BLACK);
-            //elementAddedLabel.setText("");
-        }
-    }//GEN-LAST:event_entryFieldMousePressed
-
     //Entrada de Obtener elemento al ser presionada
     private void getElementEntryMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_getElementEntryMousePressed
         if (getElementEntry.getText().equals("Ingresa la posición")) {
@@ -870,6 +867,19 @@ public class Eval3 extends javax.swing.JFrame {
         background.requestFocusInWindow();
     }//GEN-LAST:event_backgroundMouseClicked
 
+    private void entryFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entryFieldFocusGained
+        if (entryField.getText().equals("Ingresa un número") && entryField.isEditable()) {
+            entryField.setText("");
+            entryField.setForeground(BLACK);
+            //elementAddedLabel.setText("");
+        }
+        elementAddedLabel.setVisible(false);
+    }//GEN-LAST:event_entryFieldFocusGained
+
+    private void btnTextAgregarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnTextAgregarFocusLost
+        elementAddedLabel.setVisible(false);
+    }//GEN-LAST:event_btnTextAgregarFocusLost
+
     public void clear() {
         elementAddedLabel.setText("Elemento Agregado");
         elementAddedLabel.setVisible(false);
@@ -883,7 +893,7 @@ public class Eval3 extends javax.swing.JFrame {
         deleteElementLabel.setVisible(false);
         deleteElementEntry.setVisible(false);
         separatorDeleteElement.setVisible(false);
-        btnDeleteElement.setForeground(new java.awt.Color(255, 255, 255));
+        btnTextDeleteElement.setForeground(new java.awt.Color(255, 255, 255));
         btnDeleteElement.setVisible(false);
 
         labelSortMay.setVisible(false);
