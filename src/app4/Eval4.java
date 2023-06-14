@@ -35,8 +35,6 @@ import javax.swing.table.JTableHeader;
  * @author MarcoVilera
  */
 public class Eval4 extends javax.swing.JFrame {
-
-    int xMouse, yMouse;//Ejes X Y
     Connection con = ConnectionMySQL.connect();//Conexión
     byte[] photo = null;//Vector para subir imagen
     byte[] photoData = null;
@@ -870,7 +868,7 @@ public class Eval4 extends javax.swing.JFrame {
                 emailEntry.setForeground(black);
 
                 blob = rs.getBlob("photo");
-                System.out.println(blob);
+                //System.out.println(blob);
                 InputStream inputStream = blob.getBinaryStream();
                 Image image = ImageIO.read(inputStream);
                 ImageIcon imgIcon = new ImageIcon(image.getScaledInstance(imgLabel.getWidth(), imgLabel.getHeight(), image.SCALE_SMOOTH));
