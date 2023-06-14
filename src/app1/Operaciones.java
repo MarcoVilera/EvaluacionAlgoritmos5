@@ -85,9 +85,15 @@ public class Operaciones {
         for (int i = 0; i < matriz.length; i++) {
             resultado = resultado.multiply(BigInteger.valueOf(matriz[i][0]));
         }
-        String resultadoString = resultado.toString();
-        String resultadoInvertido = new StringBuilder(resultadoString).reverse().toString();
-        return resultadoInvertido;
+        BigInteger resultadoAbsoluto = resultado.abs();
+        BigInteger resultadoInvertido = BigInteger.ZERO;
+        while (resultadoAbsoluto.compareTo(BigInteger.ZERO) > 0) {
+            BigInteger[] divisionYResto = resultadoAbsoluto.divideAndRemainder(BigInteger.TEN);
+            BigInteger digito = divisionYResto[1];
+            resultadoInvertido = resultadoInvertido.multiply(BigInteger.TEN).add(digito);
+            resultadoAbsoluto = divisionYResto[0];
+        }
+        return resultadoInvertido.toString();
     }
 
     public static String diagonalSecProm(int matriz[][]) {//Obtiene la diagonal secundaria de una matriz y el promedio de la misma
@@ -112,10 +118,11 @@ public class Operaciones {
         return result;
     }
 
-    public static String potenciaMenorMayor(int matriz[][]) {//Potencia entre el menor elemento elevado al mayor elemento
+    public static String potenciaMenorMayor(int matriz[][]) {
         int mayor, menor;
         mayor = 0;
         menor = 999;
+        boolean hayNumerosPositivos = false;
         String result = "";
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {
@@ -124,9 +131,15 @@ public class Operaciones {
                 }
                 if (matriz[i][j] > 0 && matriz[i][j] < menor) {
                     menor = matriz[i][j];
+                    hayNumerosPositivos = true;
                 }
             }
         }
+
+        if (!hayNumerosPositivos) {
+            return "No hay números positivos";
+        }
+
         BigInteger menorb = BigInteger.valueOf(menor);
         BigInteger pot = menorb.pow(mayor);
         result = Integer.toString(menor) + "^" + Integer.toString(mayor) + " = " + pot;

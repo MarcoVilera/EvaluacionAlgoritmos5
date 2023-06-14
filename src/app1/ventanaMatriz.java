@@ -124,7 +124,7 @@ public class ventanaMatriz extends javax.swing.JFrame {
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 373, -1, -1));
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("5: Potencia de menor elemento elevado al mayor elemento");
+        jLabel7.setText("5: Potencia de menor elemento positivo elevado al mayor elemento positivo");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 412, -1, -1));
 
         mostrResult2.setText(" ");
@@ -143,7 +143,7 @@ public class ventanaMatriz extends javax.swing.JFrame {
         displayTest1.setEditable(false);
         jScrollPane6.setViewportView(mostrResult5);
 
-        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 490, 50));
+        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, 490, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 480));
 
@@ -156,15 +156,12 @@ public class ventanaMatriz extends javax.swing.JFrame {
         int n = 0;
         try {
             n = Integer.parseInt(nField.getText());
-
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Valor no válido");
-            fail = true;
-        }
-        try {
             if (n < 1 || n > 9) {
                 throw new NumException();
             }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Valor no válido");
+            fail = true;
         } catch (NumException ex) {
             JOptionPane.showMessageDialog(null, "Ingresa un número entre 1 y 9");
             fail = true;

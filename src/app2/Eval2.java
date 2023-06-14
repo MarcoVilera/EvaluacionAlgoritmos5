@@ -13,8 +13,7 @@ public class Eval2 extends javax.swing.JFrame {
     public Eval2() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
-        
+
     }
 
     /**
@@ -344,31 +343,16 @@ public class Eval2 extends javax.swing.JFrame {
         BigInteger nnd;
         boolean fail = false;
 
-        //Excepción en caso de valor N no sea un entero
         try {
             n = Integer.parseInt(nEntry.getText());
+            if (n <= NMIN || n >= NMAXIMO) {
+                throw new NumException();
+            }
         } catch (NumberFormatException errorEntry) {
             JOptionPane.showMessageDialog(null, "Valor N Invalido, introduzca un valor númerico");
             nEntry.setText("Introduce el valor de N");
             nEntry.setForeground(new java.awt.Color(153, 153, 153));
             fail = true;
-        }
-
-        //Excepción en caso de valor M no sea un entero
-        try {
-            m = Integer.parseInt(mEntry.getText());
-        } catch (NumberFormatException errorEntry) {
-            JOptionPane.showMessageDialog(null, "Valor M Invalido, introduzca un valor númerico");
-            mEntry.setText("Introduce el valor de M");
-            mEntry.setForeground(new java.awt.Color(153, 153, 153));
-            fail = true;
-        }
-
-        //Excepción en caso de valor N se menor a -99 o mayor a 99
-        try {
-            if (n <= NMIN || n >= NMAXIMO) {
-                throw new NumException();
-            }
         } catch (NumException nmInvalid) {
             JOptionPane.showMessageDialog(null, "Valor N Invalido, Introduzca un número entre -99 y 99");
             nEntry.setText("Introduce el valor de N");
@@ -376,11 +360,16 @@ public class Eval2 extends javax.swing.JFrame {
             fail = true;
         }
 
-        //Excepción en caso de valor M se menor a -99 o mayor a 99
         try {
+            m = Integer.parseInt(mEntry.getText());
             if (m <= NMIN || m >= NMAXIMO) {
                 throw new NumException();
             }
+        } catch (NumberFormatException errorEntry) {
+            JOptionPane.showMessageDialog(null, "Valor M Invalido, introduzca un valor númerico");
+            mEntry.setText("Introduce el valor de M");
+            mEntry.setForeground(new java.awt.Color(153, 153, 153));
+            fail = true;
         } catch (NumException nmInvalid) {
             JOptionPane.showMessageDialog(null, "Valor M Invalido, Introduzca un número entre -99 y 99");
             mEntry.setText("Introduce el valor de M");
@@ -500,7 +489,7 @@ public class Eval2 extends javax.swing.JFrame {
     //Fin Botón Limpiar
 
     private void nEntryMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nEntryMousePressed
-        
+
         if (nEntry.getText().equals("Introduce el valor de N")) {
             nEntry.setText("");
             nEntry.setForeground(black);
@@ -526,7 +515,6 @@ public class Eval2 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_mEntryMousePressed
 
-   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
